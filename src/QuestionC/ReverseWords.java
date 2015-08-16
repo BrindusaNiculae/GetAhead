@@ -8,24 +8,25 @@ import java.util.StringTokenizer;
  */
 public class ReverseWords {
 
-    public static String reverse(String sentence, StringTokenizer token, String reversedSentence) {
+    public static String reverse(String sentence, StringTokenizer token) {
 
-        if (token.hasMoreElements()) {
-            reversedSentence = token.nextElement().toString() + " " + reversedSentence;
-            return reverse(null, token, reversedSentence);
+        if (!token.hasMoreElements()) {
+            return "";
+        } else {
+            String aux = token.nextElement().toString();
+            return reverse(null, token) + " " + aux;
         }
-        return reversedSentence;
     }
 
     public static void runExample(String sentence) {
         System.out.println("Original sentence: " + sentence
-                + "\nReversed sentence: " + reverse(sentence, new StringTokenizer(sentence), new String()));
+                + "\nReversed sentence: " + reverse(sentence, new StringTokenizer(sentence)));
 
     }
 
     public static void main(String[] args) {
 
-        runExample("I wish you a merry Christmas");
+        runExample("I wish you a merry Christmas.");
         runExample("Compromise, don't fight!");
         runExample("");
 
