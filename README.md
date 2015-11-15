@@ -1,5 +1,3 @@
-Solutions for the following problems:<br>
-
 <b> Question A: </b><br>
 Determine whether a circular array of relative indices forms a single, complete cycle when following the indices. <br><br>
 
